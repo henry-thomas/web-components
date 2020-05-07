@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Grid</title>
+    <style>
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 2rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        ;
+    </style>
+    <script src="dataGrid.js"></script>
+    <script src="deviceDgManager.js"></script>
+
+</head>
+
+<body>
+
+        <device-dg-manager></device-dg-manager>
+
+    <script>
+
+        let devListArr = [
+            {
+                alertMap: {},
+                connected: true,
+                deviceName: "LoggerV2-Relay1",
+                hidden: false,
+                isInitTransient: true,
+                lastSeen: 0,
+                logerMyPowerId: 1324,
+                modelID: 14,
+                serialNumber: "LoggerV2-Relay1",
+                subDevID: 39,
+                subModelID: 2,
+                typeID: 2001
+            },
+            {
+                alertMap: {},
+                connected: true,
+                deviceName: "LoggerV2-Relay2",
+                hidden: false,
+                isInitTransient: true,
+                lastSeen: 0,
+                logerMyPowerId: 1324,
+                modelID: 14,
+                serialNumber: "LoggerV2-Relay2",
+                subDevID: 39,
+                subModelID: 2,
+                typeID: 2001
+            },
+            {
+                alertMap: {},
+                connected: true,
+                deviceName: "LoggerV2-Relay3",
+                hidden: false,
+                isInitTransient: true,
+                lastSeen: 0,
+                logerMyPowerId: 1324,
+                modelID: 14,
+                serialNumber: "LoggerV2-Relay3",
+                subDevID: 39,
+                subModelID: 2,
+                typeID: 2001
+            },
+            {
+                alertMap: {},
+                connected: true,
+                deviceName: "LoggerV2-Relay4",
+                hidden: false,
+                isInitTransient: true,
+                lastSeen: 0,
+                logerMyPowerId: 1324,
+                modelID: 14,
+                serialNumber: "LoggerV2-Relay4",
+                subDevID: 39,
+                subModelID: 2,
+                typeID: 2001
+            },
+            {
+                alertMap: {},
+                connected: true,
+                deviceName: "LoggerV2-Relay5",
+                hidden: false,
+                isInitTransient: true,
+                lastSeen: 0,
+                logerMyPowerId: 1324,
+                modelID: 14,
+                serialNumber: "LoggerV2-Relay5",
+                subDevID: 40,
+                subModelID: 2,
+                typeID: 2001,
+            }];
+
+         const dataGrid = document.querySelector('device-dg-manager');
+         dataGrid.init(devListArr);
+
+    </script>
+</body>
+
+</html>
