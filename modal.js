@@ -92,7 +92,7 @@ class Modal extends HTMLElement {
         `;
         const slots = this.shadowRoot.querySelectorAll('slot');
         slots[1].addEventListener('slotchange', event => {
-            console.dir(slots[1].assignedNodes());
+            // console.dir(slots[1].assignedNodes());
         });
 
         const backdrop = this.shadowRoot.querySelector('#backdrop');
