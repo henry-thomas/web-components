@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tree</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 2rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+    <script src="modal.js"></script>
+    <script src="tree.js"></script>
+</head>
+
+<body>
+    <smdui-modal position="horizontal">
+        <h1 slot="title">Add Device</h1>
+        <p>Select your device below</p>
+        <smdui-tree></smdui-tree>
+    </smdui-modal>
+    <p>Useless text</p>
+    <button>Add Device</button>
+
+    <script>
+
+        const nodes = JSON.stringify([
+            {
+                label: "SMA",
+                children: [{
+                    label: "Battery Inverter",
+                    children: [{
+                        label: "SunyIsland 6h/8h/12h",
+                        iconType: "picture",
+                        data: "com.platar86.myPower.logger.subDevice.sma.sunnyIslandModbus.SunnyIslandService"
+                    },
+                    {
+                        label: "Energy Meter1",
+                        children: [{
+                            label: "SMA Energy Meter",
+                            iconType: "picture",
+                            data: "com.platar86.myPower.logger.subDevice.sma.energyMeter.SmaEnergyMeterService"
+                        }]
+                    }, 
+                    {
+                        label: "Energy Meter2",
+                        children: [{
+                            label: "SMA Energy Meter",
+                            iconType: "picture",
+                            data: "com.platar86.myPower.logger.subDevice.sma.energyMeter.SmaEnergyMeterService"
+                        }]
+                    },
+                    {
+                        label: "Energy Meter3",
+                        children: [{
+                            label: "SMA Energy Meter",
+                            iconType: "picture",
+                            data: "com.platar86.myPower.logger.subDevice.sma.energyMeter.SmaEnergyMeterService"
+                        }]
+                    },
+                    {
+                        label: "Energy Meter4",
+                        children: [{
+                            label: "SMA Energy Meter",
+                            iconType: "picture",
+                            data: "com.platar86.myPower.logger.subDevice.sma.energyMeter.SmaEnergyMeterService"
+                        }]
+                    },
+                    {
+                        label: "Energy Meter5",
+                        children: [{
+                            label: "SMA Energy Meter",
+                            iconType: "picture",
+                            data: "com.platar86.myPower.logger.subDevice.sma.energyMeter.SmaEnergyMeterService"
+                        }]
+                    },
+                    {
+                        label: "Energy Meter6",
+                        children: [{
+                            label: "SMA Energy Meter",
+                            iconType: "picture",
+                            data: "com.platar86.myPower.logger.subDevice.sma.energyMeter.SmaEnergyMeterService"
+                        }]
+                    }
+                ]
+                }]
+            },
+            {
+                label: "SunSpec",
+                children: [{
+                    label: "SunSpec Solar Inverter", children: [{
+                        label: "SunSpec Inverter",
+                        iconType: "picture",
+                        data: "com.platar86.myPower.logger.subDevice.sunspec.SunSpecService"
+                    }]
+                }]
+            }
+        ]);
+
+        const confirmbutton = document.querySelector('button');
+        const modal = document.querySelector('smdui-modal');
+        const tree = document.querySelector('smdui-tree');
+
+        confirmbutton.addEventListener('click', () => {
+            if (!modal.isOpen)
+                modal.open();
+                tree.open(JSON.parse(nodes));
+        })
+
+        modal.addEventListener('cancel', () => {
+            console.log('Canceled event listener here');
+        })
+
+        modal.addEventListener('confirm', () => {
+            console.log('Confirmed event listener here');
+        })
+
+        let i = document.createElement('smdui-modal');
+
+
+    </script>
+</body>
+
+</html>
